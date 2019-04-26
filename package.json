@@ -1,8 +1,8 @@
 {
-  "name": "react-clicky_game",
+  "name": "react-clicky-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://abalomenos.github.io/react-clicky_game",
+  "homepage": "https://abalomenos.github.io/react-clicky-game",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
@@ -37,11 +37,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abalomenos/react-clicky_game.git"
+    "url": "git+https://github.com/abalomenos/react-clicky-game.git"
   },
   "author": "Argiris Balomenos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/abalomenos/react-clicky_game/issues"
+    "url": "https://github.com/abalomenos/react-clicky-game/issues"
   }
 }
