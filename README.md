@@ -15,3 +15,4 @@ react, react-dom, react-scripts
 
 
 ## Demo
+This React Web App is hosted on Github Pages. Link: [https://abalomenos.github.io/react-clicky-game/](https://abalomenos.github.io/react-clicky-game/).
