@@ -1,7 +1,8 @@
 
 .header {
     background-color: #2c323c;
-    background-image: url(/assets/images/headerBG.jpg);
+    /**** Background below loaded in Header.js due to build issues ****/
+    /* background-image: url(/assets/images/headerBG.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
