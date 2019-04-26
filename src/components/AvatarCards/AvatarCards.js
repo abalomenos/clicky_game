@@ -4,7 +4,7 @@ import './AvatarCards.css';
 
 class AvatarCard extends Component {
 
-    handleAvatarOnClick = event => {
+    handleAvatarOnClick = (event) => {
         this.props.AvatarOnClick(event);
     };
  
@@ -36,6 +36,7 @@ class AvatarCard extends Component {
                             backgroundPosition: 'center'
                         }}
                         key={avatar.id}
+                        id={avatar.id}
                         onClick={this.handleAvatarOnClick}
                     >
                     </div>
