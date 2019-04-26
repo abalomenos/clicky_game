@@ -14,7 +14,8 @@ class App extends Component {
         topScore: 0,
         selectedAvatars: [],
         message: "Click an image to begin!",
-        messageClass: ""
+        messageClass: "",
+        avatarClass: "click-item"
     }
 
     // When DOM is ready
@@ -42,11 +43,14 @@ class App extends Component {
         if (SelectedAvatars.includes(ID)) {
             
             this.setState({
-                score: 0,
-                message: "You lost!",
-                messageClass: ""
+                messageClass: ""                
             }, () => {
-                setTimeout(() => this.setState({ messageClass: "incorrect" }), 0)
+                setTimeout(() => this.setState({ 
+                    score: 0,
+                    message: "You lost!",
+                    messageClass: "incorrect",
+                    avatarClass: "click-item shake"
+                }), 0)
             })
 
             this.gameInitialize();
@@ -57,12 +61,15 @@ class App extends Component {
             SelectedAvatars.push(ID);
             
             this.setState({
-                score: Score,
-                topScore: (Score > TopScore) ? Score : TopScore,
-                message: Score === AvatarList.length ? "You Won!" : "You guessed correctly!",
                 messageClass: ""
             }, () => {
-                setTimeout(() => this.setState({ messageClass: "correct" }), 0)
+                setTimeout(() => this.setState({
+                    score: Score,
+                    topScore: (Score > TopScore) ? Score : TopScore,
+                    message: Score === AvatarList.length ? "You Won!" : "You guessed correctly!",
+                    messageClass: "correct",
+                    avatarClass: "click-item"
+                }), 0)
             })
 
             if (Score === AvatarList.length) {
@@ -74,20 +81,20 @@ class App extends Component {
     }
 
 
-
     render() {
         return (
             <div>
                 <NavBar 
-                    score={this.state.score}
-                    topScore={this.state.topScore}
-                    message={this.state.message}
-                    messageClass={this.state.messageClass}
+                    GameScore={this.state.score}
+                    GameTopScore={this.state.topScore}
+                    GameMessage={this.state.message}
+                    GameMessageClass={this.state.messageClass}
                 />
                 <Header />
                 <AvatarCards 
                     Avatars={AvatarList}
                     AvatarOnClick={this.gameRound}
+                    AvatarClass={this.state.avatarClass}
                 />
                 <Footer />
             </div>

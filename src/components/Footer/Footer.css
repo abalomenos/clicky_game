@@ -3,7 +3,7 @@
     background: #6956af;
     height: 100px;
     position: relative;
-    color: #fff;
+    color: #cccccc;
     overflow: auto;
 }
 
@@ -15,6 +15,7 @@
     background: #5138a1;
     padding: 8px;
     font-weight: bold;
+    text-align: center;
 }
 
 .footer>.bottom>img {
@@ -22,6 +23,21 @@
     position: relative;
     top: 3px;
     left: 2px;
+}
+
+.footer a:link {
+    color: #cccccc!important;
+    text-decoration: none;
+}
+
+.footer a:visited {
+    color: #cccccc!important;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color:  #ffffff!important;
+    text-decoration: none;
 }
 
 .App-logo {
@@ -36,5 +52,5 @@
     to {
         transform: rotate(360deg);
     }
-  }
+}
     

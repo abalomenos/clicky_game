@@ -9,7 +9,7 @@ class Footer extends Component {
         return (
             <footer className='footer'>
                 <div className='bottom'>
-                    Clicky Game! | Powered By<img src={img} className='App-logo' alt='logo'/><a href='https://github.com/abalomenos' target='_blank' rel='noopener noreferrer'>Argiris Balomenos</a>
+                    Powered By<img src={img} className='App-logo' alt='logo'/><a href='https://github.com/abalomenos' target='_blank' rel='noopener noreferrer'>Argiris Balomenos</a>
                 </div>
             </footer>
         );

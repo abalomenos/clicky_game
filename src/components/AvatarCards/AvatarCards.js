@@ -29,7 +29,7 @@ class AvatarCard extends Component {
                     <div 
                         role='img'
                         aria-label='click item'
-                        className='click-item'
+                        className={this.props.AvatarClass}
                         style={{
                             backgroundImage: `url(${avatar.url})`,
                             backgroundRepeat  : 'no-repeat',
