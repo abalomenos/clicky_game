@@ -29,7 +29,6 @@ class App extends Component {
             score: 0,
             selectedAvatars: []
         });
-        console.log("Init " + this.state.score);
     }
 
     // Function called after each Avatar is Clicked
