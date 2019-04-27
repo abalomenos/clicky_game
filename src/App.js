@@ -90,7 +90,7 @@ class App extends Component {
                     setTimeout(() => this.setState({
                         score: Score,
                         topScore: (Score >= TopScore) ? Score : TopScore,
-                        message: (AvatarList.length - Score == 1) ? `Almost there, ${AvatarList.length - Score} image left!` : `${AvatarList.length - Score} images left!`,
+                        message: (AvatarList.length - Score === 1) ? `Almost there, ${AvatarList.length - Score} image left!` : `${AvatarList.length - Score} images left!`,
                         messageClass: "correct",
                         avatarClass: "click-item"
                     }), 0);
