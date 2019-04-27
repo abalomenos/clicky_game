@@ -28,7 +28,8 @@ class App extends Component {
         this.setState({
             score: 0,
             selectedAvatars: []
-        })
+        });
+        console.log("Init " + this.state.score);
     }
 
     // Function called after each Avatar is Clicked
@@ -39,48 +40,70 @@ class App extends Component {
         let TopScore = this.state.topScore;
         let SelectedAvatars = this.state.selectedAvatars;
 
-        // Check if Avatar has already been selected
+        // Check if we lost the game
         if (SelectedAvatars.includes(ID)) {
             
+            // Update the DOM
             this.setState({
-                messageClass: ""                
+                messageClass: "" // In order to get CSS effect
             }, () => {
                 setTimeout(() => this.setState({ 
                     score: 0,
                     message: "You lost!",
                     messageClass: "incorrect",
                     avatarClass: "click-item shake"
-                }), 0)
+                }), 0);
             })
 
             this.gameInitialize();
 
         } else {
 
+            // Increase our score by 1
             Score ++;
+            // Push our selected image ID to our array
             SelectedAvatars.push(ID);
             
-            this.setState({
-                messageClass: ""
-            }, () => {
-                setTimeout(() => this.setState({
-                    score: Score,
-                    topScore: (Score > TopScore) ? Score : TopScore,
-                    message: Score === AvatarList.length ? "You Won!" : "You guessed correctly!",
-                    messageClass: "correct",
-                    avatarClass: "click-item"
-                }), 0)
-            })
-
+            // Check if we won the game
             if (Score === AvatarList.length) {
+                
+                // Update the DOM
+                this.setState({
+                    messageClass: "" // In order to get CSS effect
+                }, () => {
+                    setTimeout(() => this.setState({
+                        score: 0,
+                        topScore: Score,
+                        message: "You won!",
+                        messageClass: "correct",
+                        avatarClass: "click-item"
+                    }), 0);
+                });
+                
                 this.gameInitialize();
+
+            } else { // Update our game progress
+
+                // Update the DOM
+                this.setState({
+                    messageClass: "" // In order to get CSS effect
+                }, () => {
+                    setTimeout(() => this.setState({
+                        score: Score,
+                        topScore: (Score >= TopScore) ? Score : TopScore,
+                        message: (AvatarList.length - Score == 1) ? `Almost there, ${AvatarList.length - Score} image left!` : `${AvatarList.length - Score} images left!`,
+                        messageClass: "correct",
+                        avatarClass: "click-item"
+                    }), 0);
+                });
+
             }
 
         }
 
     }
 
-
+    // Render the DOM
     render() {
         return (
             <div>
