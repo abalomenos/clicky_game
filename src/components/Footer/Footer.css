@@ -4,14 +4,13 @@
     height: 100px;
     position: relative;
     color: #cccccc;
-    overflow: auto;
+    overflow: none;
 }
 
 .footer>.bottom {
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     background: #5138a1;
     padding: 8px;
     font-weight: bold;
@@ -21,7 +20,7 @@
 .footer>.bottom>img {
     width: 50px;
     position: relative;
-    top: 3px;
+    top: 2px;
     left: 2px;
 }
 
